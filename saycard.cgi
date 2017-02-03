@@ -5,7 +5,9 @@ if(! $?ID) then
   setenv ID "$PATH_INFO:t"
 endif
 
-if(! -e "sounds/${ID}.${type}") then
+setenv cards `sql -d cah 'SELECT COUNT(*) FROM cards WHERE ID="$ID"'`
+
+if(! -e "sounds/${ID}.${type}" && "$cards" == 1) then
   setenv text `sql -d cah 'SELECT text FROM cards WHERE ID="$ID"'`
   setenv text `echo "$text" | sed 's/"//g' | sed 's/\\!//g' | sed -r 's/(_+)/blank/g'`
   echo "$text" | text2wave > "sounds/${ID}.wav"
