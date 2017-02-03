@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<sql query='UPDATE users SET active=now() WHERE session="$HTTP_SESSION"'></sql>
+<html lang='en'>
+<head>
+  <title>Cards Against Humanity Online (Unofficial)</title>
+  <link href='https://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
+  <!-- Required meta tags always come first -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script>
+
+  <!--Font awesome stuff-->
+  <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+
+  <script type='text/javascript' src='https://specialk.me.uk/dropsearch.js'></script>
+  <script type='text/javascript' src='javascript.js'></script>
+  <link rel='stylesheet' href='https://specialk.me.uk/mybs.css' />
+  <script type="text/javascript" src="jquery.form.min.js"></script>
+  <script type='text/javascript' src='x2j2.js'></script>
+  <link rel='stylesheet' href='style.css' />
+</head>
+<body>
+<script var='userid' var='usertype'></script>
+
+<div class='body'>
+<div class='main'>
+
+<nav class='navbar navbar-dark bg-inverse navbar-fixed-top' id='menu'><div class='container'>
+  <a class='navbar-brand' href=''><b>Cards Against Humanity</b></a>
+  <button class="navbar-toggler hidden-md-up" type="button" data-toggle="collapse" data-target="#menunav" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"></button>
+
+  <div class='collapse navbar-toggleable-sm' id='menunav'>
+    <ul class='nav navbar-nav'>
+      <IF NOT usertype>
+        <a href='index.cgi' class='nav-item nav-link'>Home</a>
+        <a href='about.cgi' class='nav-item nav-link'>About</a>
+      </IF>
+      <IF usertype>
+        <a href='index.cgi' class='nav-item nav-link'><span class='fa fa-user-circle-o smgr'></span>Profile</a>
+        <a href='play.cgi' class='nav-item nav-link'><span class='fa fa-gamepad smgr'></span>Play</a>
+        <a href='logout.cgi?game=$game' class='nav-item nav-link'><span class='fa fa-sign-out smgr'></span>Logout</a>
+      </IF>
+      <a href='#' class='nav-item nav-link float-sm-right'><span class='fa fa-chevron-up'></span><span class='hidden-md-down ml-1'>To top</span></a>
+    </ul>
+  </div>
+</div></nav>
+
+<div class='content'>
+<IF SUCCESS><div class="alert alert-success" role="alert"><span class="fa fa-save" aria-hidden="true"></span>&nbsp;&nbsp;<output name='SUCCESS'></div></IF>
+<IF ERROR><div class="alert alert-danger" role="alert"><span class="fa fa-exclamation" aria-hidden="true"></span><span class="sr-only">Error:</span>&nbsp;&nbsp;<output name='ERROR'></div></IF>

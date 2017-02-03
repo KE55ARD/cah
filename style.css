@@ -1,0 +1,260 @@
+* {
+  font-family: 'Questrial', sans-serif;
+  font-size: 16px;
+}
+
+body {
+  padding: 0px;
+  margin: 0px;
+  background-color: #ccc;
+}
+
+table, tr, td {
+  vertical-align: top;
+}
+
+table.form tr td {
+  padding: 5px;
+}
+
+table.form tr:nth-child(odd), table.form tr:nth-child(odd) td, div.invite:nth-child(odd) {
+  background-color: #eee;
+}
+
+table.form tr td:first-of-type {
+  padding-right: 10px;
+}
+
+table.form tr td:first-of-type:after {
+  content: ":";
+}
+
+table.form tr:last-of-type td:first-of-type:after {
+  content: "";
+}
+
+div.body > div {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div.main {
+  padding-top: 50px;
+  margin-bottom: 20px;
+  text-align: left;
+  background-color: #fff;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 0px 0px 5px #333;
+}
+
+@media screen and (min-width: 1100px) {
+  div.main {
+    width: 1100px;
+  }
+}
+
+div.content {
+  padding: 20px;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,h2,h3,h4,h5 {
+  font-weight: bold;
+}
+
+div.invite {
+  display: block;
+  padding: 5px;
+}
+
+.cardcell {
+  display: inline-block;
+  padding-right: 15px;
+  margin-right: 15px;
+  border-right: 1px solid #e0e0e0;
+}
+
+.cardcell:last-of-type {
+  border-right: 0px;
+}
+
+.fadein, .fadeout {
+  content: "";
+  height: 100%;
+  width: 20px;
+  z-index: 100;
+  position: absolute;
+  top: 0px;
+  pointer-events: none;
+}
+
+.fadein {
+  left: 0px;
+  background: linear-gradient(to right, rgba(255,255,255, 1), rgba(255,255,255, 0) 100%);
+}
+
+.fadeout {
+  right: 0px;
+  background: linear-gradient(to left, rgba(255,255,255, 1), rgba(255,255,255, 0) 100%);
+}
+
+.cardrow {
+  position: relative;
+  display: block;
+  overflow: auto;
+  width: 99%;
+  white-space: nowrap;
+  vertical-align: top;
+}
+
+.gamecard {
+  display: inline-block;
+  white-space: normal;
+  vertical-align: top;
+  font-size: 15px;
+  padding: 20px;
+  padding-bottom: 50px;
+  margin: 5px;
+  width: 170px;
+  height: 250px;
+  border-radius: 15px;
+  box-shadow: 1px 1px 5px #666;
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.selectedcard {
+  box-shadow: 1px 1px 10px #333;
+}
+
+.msg {
+  font-size: 12px;
+}
+
+.black {
+  background-color: #191919;
+  background-image: url(images/cahb.png);
+  color: #fff;
+}
+
+.white {
+  background-color: #fff;
+  background-image: url(images/cahw.png);
+  color: #191919;
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+.padcells tr td {
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.padcells tr:nth-child(even) td {
+  background-color: #eee;
+}
+
+.nopad {
+  margin: 0px;
+}
+
+.pad5 {
+  padding: 5px;
+}
+
+.pad10 {
+  padding: 10px;
+}
+
+.padleft10 {
+  padding-left: 10px;
+}
+
+.marginright10 {
+  margin-right: 10px;
+}
+
+.marginright20 {
+  margin-right: 20px;
+}
+
+.marginbot10 {
+  margin-bottom: 10px;
+}
+
+.marginbot20 {
+  margin-bottom: 20px;
+}
+
+.wide {
+  width: 100%;
+}
+
+.half {
+  width: 49%;
+}
+
+.inline {
+  display: inline;
+}
+
+.block {
+  display: block;
+}
+
+.inlineblock {
+  display: inline-block;
+}
+
+.floatleft {
+  float: left;
+}
+
+.floatright {
+  float: right;
+}
+
+.wrap {
+  white-space: normal;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.gameinfo {
+  color: #e00;
+}
+
+.smiley {
+  width: 20px;
+  margin: 1px;
+}
